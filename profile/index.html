@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Mini Avatar — 50×50 Persistent</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    :root { color-scheme: dark light; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, sans-serif;
+      min-height: 100svh; display: grid; place-items: center; margin: 0; padding: 24px;
+    }
+    .wrap { display: grid; gap: 14px; place-items: center; }
+    label { font-size: 0.95rem; opacity: 0.8; }
+    input[type="file"] { font-size: 0.95rem; }
+    .avatar {
+      width: 50px; height: 50px; border-radius: 50%;
+      object-fit: cover; object-position: center;
+      box-shadow: 0 0 0 1px rgba(0,0,0,.08), 0 2px 10px rgba(0,0,0,.08);
+      background: #e6e6e6;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <label for="u">Upload image (will persist locally)</label>
+    <input id="u" type="file" accept="image/*" />
+    <img id="avatar" class="avatar" alt="50x50 avatar" width="50" height="50" />
+  </main>
+
+  <script>
+    (function () {
+      const KEY = "mini-avatar-50x50-dataurl";
+      const input = document.getElementById("u");
+      const img = document.getElementById("avatar");
+
+      // Load persisted avatar on start
+      try {
+        const saved = localStorage.getItem(KEY);
+        if (saved) img.src = saved;
+      } catch (e) {
+        console.warn("localStorage unavailable:", e);
+      }
+
+      // Handle file selection
+      input.addEventListener("change", async (e) => {
+        const file = e.target.files && e.target.files[0];
+        if (!file) return;
+        if (!file.type.startsWith("image/")) {
+          alert("Please select an image file.");
+          return;
+        }
+        const dataUrl = await fileTo50x50DataURL(file);
+        img.src = dataUrl;
+        try {
+          localStorage.setItem(KEY, dataUrl);
+        } catch (e) {
+          console.warn("Could not persist avatar:", e);
+        }
+      });
+
+      // Read file, draw into 50x50 canvas (cover), return PNG data URL
+      function fileTo50x50DataURL(file) {
+        return new Promise((resolve, reject) => {
+          const fr = new FileReader();
+          fr.onerror = () => reject(new Error("Failed to read file"));
+          fr.onload = () => {
+            const imgEl = new Image();
+            imgEl.onload = () => {
+              const size = 50;
+              const canvas = document.createElement("canvas");
+              canvas.width = size; canvas.height = size;
+              const ctx = canvas.getContext("2d");
+
+              // Compute cover crop
+              const iw = imgEl.width, ih = imgEl.height;
+              const scale = Math.max(size / iw, size / ih);
+              const sw = size / scale, sh = size / scale;
+              const sx = (iw - sw) / 2;
+              const sy = (ih - sh) / 2;
+
+              ctx.clearRect(0, 0, size, size);
+              ctx.drawImage(imgEl, sx, sy, sw, sh, 0, 0, size, size);
+
+              resolve(canvas.toDataURL("image/png"));
+            };
+            imgEl.onerror = () => reject(new Error("Invalid image"));
+            imgEl.src = fr.result;
+          };
+          fr.readAsDataURL(file);
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
