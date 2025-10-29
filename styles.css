@@ -5,6 +5,19 @@
     padding: 10px;
 }
 
+.profileimg {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.navlink-a:hover {
+    background-color: black;
+    border-radius: 15px;
+    color: white;
+    padding: 15px;
+}
+
 li {
     margin: 0 10px;
     display: inline-block;
@@ -21,25 +34,26 @@ ul {
     margin: 0;
 }
 
-button, btn {
+button {
     background-color: black;
     border-radius: 15px;
     color: white;
     padding: 10px;
 }
 
-hr .rot90 {
+
+button:hover {
+    background-color: black;
+    border-radius: 15px;
+    color: white;
+    padding: 15px;
+}
+
+
+.rot90 {
     rotate: 90;
 }
 
-.profileimg {
-  width: 50px;
-  height: 50px;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 50%;
-  display: inline-block;
-}
 /*
 .profile-ring {
   width: 150px;
@@ -73,3 +87,57 @@ hr .rot90 {
   object-fit: cover;
 }
 */
+
+.headerdiv {
+  background-color: #dddddd;
+  border-radius: 20px;
+  border-style: solid;
+  padding: 10px;
+  text-align: center;
+  transition: 1s ease-in-out;
+}
+
+.headerdiv:hover {
+  background-color: #dddddd;
+  border-radius: 20px;
+  border-style: solid;
+  padding: 15px;
+  text-align: center;
+  transition: 1s ease-in-out;
+}
+
+
+.project {
+  border-style: solid;
+  padding: 20px;
+  border-radius: 15px;
+  margin-top: 15px;
+  display: inline-block;
+  background-color: #dddddd;
+}
+
+.projectdiv {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+
+.projectbtnlink {
+  border-style: solid;
+  border-radius: 15px;
+  background-color: rgb(0, 0, 0);
+  border-color: black;
+  text-decoration: none;
+  padding: 5px;
+  margin-left: 5px;
+  color: white;
+}
+
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400; /* You can change this to 100–900 */
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
