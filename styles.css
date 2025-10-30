@@ -1,21 +1,17 @@
 .navlink-a {
-    background-color: black;
-    border-radius: 15px;
-    color: white;
-    padding: 10px;
+width: 16px; height: 14px;
+background: #e0e0e0;
+box-shadow: 
+  inset -1px -1px #808080,
+  inset 1px 1px #ffffff;
+border:1px solid #404040;
+padding: 2px;
 }
 
 .profileimg {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-}
-
-.navlink-a:hover {
-    background-color: black;
-    border-radius: 15px;
-    color: white;
-    padding: 15px;
 }
 
 li {
@@ -34,19 +30,13 @@ ul {
     margin: 0;
 }
 
-button {
-    background-color: black;
-    border-radius: 15px;
-    color: white;
-    padding: 10px;
-}
-
-
-button:hover {
-    background-color: black;
-    border-radius: 15px;
-    color: white;
-    padding: 15px;
+button { 
+background: #e0e0e0;
+box-shadow: 
+  inset -2px -2px #808080,
+  inset 2px 2px #ffffff;
+border:1px solid #404040;
+padding: 2px;
 }
 
 
@@ -88,32 +78,25 @@ button:hover {
 }
 */
 
-.headerdiv {
-  background-color: #dddddd;
-  border-radius: 20px;
-  border-style: solid;
-  padding: 10px;
-  text-align: center;
-  transition: 1s ease-in-out;
-}
-
-.headerdiv:hover {
-  background-color: #dddddd;
-  border-radius: 20px;
-  border-style: solid;
-  padding: 15px;
-  text-align: center;
-  transition: 1s ease-in-out;
+.headerdiv { 
+background: #e0e0e0;
+box-shadow: 
+  inset -2px -2px #808080,
+  inset 2px 2px #ffffff;
+border:1px solid #404040;
+padding: 2px;
+text-align: center;
 }
 
 
 .project {
-  border-style: solid;
-  padding: 20px;
-  border-radius: 15px;
-  margin-top: 15px;
-  display: inline-block;
-  background-color: #dddddd;
+background: #e0e0e0;
+box-shadow: 
+  inset -2px -2px #808080,
+  inset 2px 2px #ffffff;
+border:1px solid #404040;
+padding: 10px;
+margin-top: 15px;
 }
 
 .projectdiv {
@@ -123,19 +106,19 @@ button:hover {
 
 
 .projectbtnlink {
-  border-style: solid;
-  border-radius: 15px;
-  background-color: rgb(0, 0, 0);
-  border-color: black;
-  text-decoration: none;
-  padding: 5px;
-  margin-left: 5px;
-  color: white;
+width: 16px; height: 14px;
+background: #e0e0e0;
+box-shadow: 
+  inset -2px -2px #808080,
+  inset 2px 2px #ffffff;
+border:1px solid #404040;
+padding: 2px;
+text-decoration: none;
 }
 
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Times New Roman", Times, serif;
   font-optical-sizing: auto;
   font-weight: 400; /* You can change this to 100–900 */
   font-style: normal;
