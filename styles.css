@@ -1,11 +1,25 @@
 .navlink-a {
-width: 16px; height: 14px;
+/* width: 16px; height: 14px; Fuck with the buttons  */
 background: #e0e0e0;
 box-shadow: 
   inset -1px -1px #808080,
   inset 1px 1px #ffffff;
 border:1px solid #404040;
 padding: 2px;
+color: black;
+display: inline-block; /* makes <a> behave like a button */
+}
+
+.navlink-a:active {
+/* width: 16px; height: 14px; */
+background: #e0e0e0;
+box-shadow: 
+  inset 1px 1px #808080,
+  inset -1px -1px #ffffff;
+border:1px solid #404040;
+padding: 2px;
+color: black;
+display: inline-block; /* makes <a> behave like a button */
 }
 
 .profileimg {
@@ -37,6 +51,17 @@ box-shadow:
   inset 2px 2px #ffffff;
 border:1px solid #404040;
 padding: 2px;
+color: black;
+}
+
+button:active { 
+background: #e0e0e0;
+box-shadow: 
+  inset 2px 2px #808080,
+  inset -2px -2px #ffffff;
+border:1px solid #404040;
+padding: 2px;
+color: black;
 }
 
 
@@ -116,6 +141,7 @@ box-shadow:
 border:1px solid #404040;
 padding: 2px;
 text-decoration: none;
+color: black;
 }
 
 
