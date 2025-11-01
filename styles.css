@@ -1,9 +1,17 @@
+@font-face {
+  font-family: "DOSVGA";
+  src: url("./fonts/MorePerfectDOSVGA.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 .navlink-a {
 /* width: 16px; height: 14px; Fuck with the buttons  */
 background: #e0e0e0;
 box-shadow: 
-  inset -1px -1px #808080,
-  inset 1px 1px #ffffff;
+  inset -2px -2px #808080,
+  inset 2px 2px #ffffff;
 border:1px solid #404040;
 padding: 2px;
 color: black;
@@ -14,8 +22,8 @@ display: inline-block; /* makes <a> behave like a button */
 /* width: 16px; height: 14px; */
 background: #e0e0e0;
 box-shadow: 
-  inset 1px 1px #808080,
-  inset -1px -1px #ffffff;
+  inset 2px 2px #808080,
+  inset -2px -2px #ffffff;
 border:1px solid #404040;
 padding: 2px;
 color: black;
@@ -146,7 +154,7 @@ color: black;
 
 
 body {
-  font-family: "Times New Roman", Times, serif;
+  font-family: "DOSVGA", "Fixedsys", monospace;
   font-optical-sizing: auto;
   font-weight: 400; /* You can change this to 100–900 */
   font-style: normal;
@@ -167,9 +175,12 @@ box-shadow:
 border:1px solid #404040;
 padding: 2px;
 text-align: center;
-margin-top: 15px;
+margin-top: 15px; 
 }
 
 .projectimg {
   width: auto; height: 300px;
 }
+
+
+
